@@ -11,7 +11,7 @@ GetCombo <- function(dt){
   # give a dt with one name column
   dt2 <- unique(dt[, .(name, name_lc = tolower(name))])
   
-  # determin how many instances of each lett there are in the name
+  # determine how many instances of each letter there are in the name
   for (letter in letters){
     dt2[, paste0(letter) := str_count(name_lc, pattern = letter)]
   }
