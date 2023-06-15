@@ -30,7 +30,7 @@ function(input, output) {
     filteredData1()[order(name)]
   },
   filter = "top",
-  options = list(pageLength = 100,
+  options = list(pageLength = 50,
                  dom = 'ltp'))
   
   # Display second filter table
@@ -38,14 +38,14 @@ function(input, output) {
     filteredData2()[order(name)]
   },
   filter = "top",
-  options = list(pageLength = 100,
+  options = list(pageLength = 50,
                  dom = 'ltp'))
   
   # Display combined filters table
-  output$filteredTableCombined <- DT::renderDT({
-    filteredDataCombined()
-  },
-  filter = "top",
-  options = list(pageLength = 100,
-                 dom = 'ltp'))
+  #output$filteredTableCombined <- DT::renderDT({
+  #  filteredDataCombined()
+  #},
+  #filter = "top",
+  #options = list(pageLength = 50,
+  #               dom = 'ltp'))
 }
