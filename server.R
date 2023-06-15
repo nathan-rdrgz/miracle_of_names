@@ -27,7 +27,7 @@ function(input, output) {
   # Tables ---------------------------------------------------------------------
   # Display first filter table
   output$filteredTable1 <- DT::renderDT({
-    filteredData1()
+    filteredData1()[order(name)]
   },
   filter = "top",
   options = list(pageLength = 100,
@@ -35,7 +35,7 @@ function(input, output) {
   
   # Display second filter table
   output$filteredTable2 <- DT::renderDT({
-    filteredData2()
+    filteredData2()[order(name)]
   },
   filter = "top",
   options = list(pageLength = 100,
